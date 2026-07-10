@@ -1,0 +1,17 @@
+[project]
+name = "alpicool-c15-ble-control"
+version = "0.1.0"
+description = "Control and schedule compatible Alpicool compressor coolers over BLE from macOS."
+requires-python = ">=3.11"
+dependencies = [
+    "bleak>=1.1.1",
+]
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "matplotlib>=3.11.0",
+    "pytest>=9.1.1",
+]

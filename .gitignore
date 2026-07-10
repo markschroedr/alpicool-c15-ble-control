@@ -1,0 +1,17 @@
+.DS_Store
+.venv/
+.pytest_cache/
+**/__pycache__/
+*.py[cod]
+
+# Generated macOS app and launchd state
+.build-app/
+Alpicool Control.app/
+launchd/
+logs/
+
+# Device-specific configuration and recorded measurements
+sleep-cooling-schedule.json
+data/
+plots/
+reports/
