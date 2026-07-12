@@ -4,6 +4,16 @@ A small macOS controller for reading, changing and scheduling the temperature of
 
 I use it to regulate a DIY water-cooled mattress overnight. The controller starts with colder water, raises the target toward morning, switches the cooler off and records a status sample every 15 minutes. The same commands also work manually from Terminal.
 
+Build story, photos and recorded temperature data: [Building a Sleep Cooling System for a Fraction of the Price](https://schroedermark.com/blog/diy-sleep-cooling-system/).
+
+![Actual DIY sleep-cooling setup](docs/assets/sleep-cooling-setup.jpg)
+
+The cooler sits beside the bed and circulates water through the pad under the sheet. Two hoses and a 5 W pump are the entire water loop.
+
+[![One real night of water-temperature data followed by a recorded Bluetooth setpoint change](docs/assets/sleep-cooling-demo.gif)](https://schroedermark.com/blog/assets/alpicool-sleep-cooling-demo.mp4)
+
+The graph uses one complete night from the production log. The terminal sequence is a privacy-safe rendering of real device responses from a recorded BLE session: `18 °C → 16 °C → 18 °C`.
+
 The implementation has been tested with an Alpicool C15-style cooler. It auto-detects BLE names beginning with `A1-`, `AK1-`, `AK2-`, `AK3-` or `WT-`, but other models may use a different protocol.
 
 ## What it does
@@ -22,15 +32,19 @@ The implementation has been tested with an Alpicool C15-style cooler. It auto-de
 - [`uv`](https://docs.astral.sh/uv/)
 - A compatible Bluetooth-enabled Alpicool cooler
 
-## Setup
+## Try it
 
-Clone the repository, then run the setup check from its folder:
+The first run is read-only. It installs the Python environment through `uv`, scans for a compatible cooler and requests its current status:
 
 ```bash
+git clone https://github.com/markschroedr/alpicool-c15-ble-control.git
+cd alpicool-c15-ble-control
 ./setup-check.sh
 ```
 
 If macOS asks for Bluetooth access for **Alpicool Control**, allow it. You can also open `Bluetooth Setup Check.command` directly in Finder to trigger the permission prompt.
+
+If your cooler uses the same protocol, please add a [compatibility report](https://github.com/markschroedr/alpicool-c15-ble-control/issues/new?template=compatibility-report.yml). Reports from models beyond the tested C15-style unit are the most useful contribution right now.
 
 ## Manual control
 

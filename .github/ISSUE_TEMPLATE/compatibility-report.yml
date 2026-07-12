@@ -1,0 +1,37 @@
+name: Compatibility report
+description: Report whether another Alpicool-style cooler works with the controller.
+title: "Compatibility: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing another cooler. Please remove Bluetooth UUIDs and other local identifiers from pasted output.
+  - type: input
+    id: model
+    attributes:
+      label: Cooler model
+      placeholder: Alpicool C15
+    validations:
+      required: true
+  - type: input
+    id: ble_name
+    attributes:
+      label: Bluetooth name or prefix
+      description: A prefix such as AK1- is enough. Do not include a CoreBluetooth UUID.
+      placeholder: AK1-
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+      placeholder: macOS 15.5
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Setup-check result
+      description: Describe which scan or status step worked or failed. Remove device identifiers before pasting output.
+    validations:
+      required: true

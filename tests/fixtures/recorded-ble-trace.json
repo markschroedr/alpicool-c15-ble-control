@@ -1,0 +1,5 @@
+{
+  "before": {"power": true, "temp_current": 18, "temp_target": 18, "mode": "Max"},
+  "changed": {"power": true, "temp_current": 18, "temp_target": 16, "mode": "Max"},
+  "restored": {"power": true, "temp_current": 18, "temp_target": 18, "mode": "Max"}
+}
